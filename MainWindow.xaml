@@ -1,0 +1,44 @@
+﻿<Window x:Class="SimpleCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleCalc"
+        mc:Ignorable="d"
+         Title="Calculator" Height="200" Width="410" ResizeMode="NoResize" Icon="/6957120098dca1bc15aee04e899a95ca.jpg">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,8,0">Число 1:</TextBlock>
+        <TextBox x:Name="TextBoxA" Grid.Row="0" Grid.Column="1" MinWidth="160" VerticalAlignment="Center"
+                 MaxLength="4" PreviewTextInput="Integer_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+        <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Foreground="Gray" Margin="8,0,0,0">-999..999</TextBlock>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,8,8,0">Число 2:</TextBlock>
+        <TextBox x:Name="TextBoxB" Grid.Row="1" Grid.Column="1" MinWidth="160" VerticalAlignment="Center" Margin="0,8,0,0"
+                 MaxLength="4" PreviewTextInput="Integer_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="0,12,0,0" HorizontalAlignment="Left">
+            <RadioButton x:Name="RadioAdd" IsChecked="True" Content="Сложение (+)" Margin="0,0,12,0"/>
+            <RadioButton x:Name="RadioSub" Content="Вычитание (−)"/>
+            <Button x:Name="ButtonCalc" Content="Вычислить" Click="ButtonCalc_Click" Margin="12,0,0,0" Padding="8,4"/>
+            <Button x:Name="ButtonClear" Content="Очистить" Click="ButtonClear_Click" Margin="8,0,0,0" Padding="8,4"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,12,0,0">
+            <TextBlock x:Name="TextBlockResult" FontSize="16" FontWeight="Bold"/>
+            <TextBlock x:Name="TextBlockError" Foreground="DarkRed" TextWrapping="Wrap" />
+        </StackPanel>
+
+    </Grid>
+</Window>
