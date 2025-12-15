@@ -179,3 +179,6 @@ namespace SimpleCalc
         }
     }
 }
+
+
+//пройденые тесты
