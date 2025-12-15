@@ -177,6 +177,22 @@ namespace SimpleCalc
             if (e.Source is ICommandSource) return;
             ApplicationCommands.Paste.Execute(null, Keyboard.FocusedElement as IInputElement);
         }
+
+
+        ///  а теперь заглушка для диплома
+        public static bool LoginIn(string username, string password)
+        {
+            string Login = "1";
+            string Pass = "1";
+            if (username == Login && password == Pass)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
 
