@@ -92,6 +92,7 @@ namespace SimpleCalc
         {
             TextBlockError.Text = "";
             TextBlockResult.Text = "";
+
         }
 
         // Этот обработчик срабатывает при вводе текста в TextBox (каждый вводимый символ)
