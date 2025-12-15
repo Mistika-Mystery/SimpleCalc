@@ -64,7 +64,7 @@ namespace SimpleCalc
                 return;
             }
 
-            // Выполняем вычисление. checked используется, чтобы поймать переполнение (на всякий случай).
+            // Выполняем вычисление. checked используется, чтобы поймать переполнение (на всякий случай, хотя в данном случае это не обязательно).
             try
             {
                 int result = RadioAdd.IsChecked == true ? checked(a + b) : checked(a - b);
@@ -122,7 +122,7 @@ namespace SimpleCalc
 
         // Формирует строку, которая получится в TextBox, если вставить/ввести текст в текущую позицию.
         // Нужна для проверки корректности результата до фактического изменения текста в контроле.
-        private static string GetProposedText(TextBox tb, string input)
+        public static string GetProposedText(TextBox tb, string input)
         {
             if (tb == null) return input;
             int selStart = tb.SelectionStart;    // позиция курсора
@@ -133,7 +133,7 @@ namespace SimpleCalc
         }
 
         // Проверяет, является ли строка допустимым целым числом в требуемом диапазоне
-        private static bool IsTextValidInteger(string text)
+        public static bool IsTextValidInteger(string text)
         {
             if (string.IsNullOrEmpty(text)) return true; // разрешаем пустую строку (пользователь может чистить поле)
             if (text == "-") return true; // разрешаем только минус (пользователь может вввести минус перед цифрами)
